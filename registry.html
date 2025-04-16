@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>See You In A Few</title>
+    <link rel="stylesheet" href="styles.css">
+    <body>
+        <center>
+            <head>
+               <style>
+                   body {
+                       margin: 0;
+                       padding: 0;
+                   }
+                   header {
+                       width: 100%;
+                       position: fixed;
+                       top: 0;
+                       left: 0;
+                       background-color: #f2f2f2;
+                       /* border-bottom: 2px solid #ccc; */
+                       /* padding: 50px; */
+                       text-align: center;
+                       z-index: 1000;
+                   }
+                   nav a {
+                       margin: 0 15px;
+                       text-decoration: none;
+                       font-weight: bold;
+                       color: #461220;
+                   }
+                   nav a:hover{
+                    color: #8C2F39;
+                   }
+                   main {
+                       padding-top: 150px; /* Space for fixed header */
+                   }
+               </style>
+           </head>
+        
+               <header class="header">
+                   <br><h1 class="errorh1">See You In A Few</h1><br>
+                   <body>
+                   <nav class="common nav">
+                       <a href="home.html">HOME</a>
+                       <a href="aboutme.html">ABOUT ME</a>
+                       <a href="yourmission.html">YOUR MISSION</a>
+                       <a href="registry.html">REGISTRY'S</a>
+                       <br><br>
+                   </nav>
+                    </body>
+               </header>
+       
+        </center> 
+<div style="margin-top:-2px;"></div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missionary Registry</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+   <link rel="stylesheet" href="styles.css">
+    <!-- <style>
+        /* Apply custom fonts */
+        body {
+            font-family: 'Times New Roman', Georgia, Arial, sans-serif;
+            background-color: #FED0BB; /* Lightest pink background */
+            color: #461220; /* Darkest maroon text */
+        }
+        /* Custom color classes for Tailwind */
+        .bg-maroon-darkest { background-color: #461220; }
+        .text-maroon-darkest { color: #461220; }
+        .bg-maroon-dark { background-color: #8c2f39; }
+        .text-maroon-dark { color: #8C2F39; }
+        .bg-maroon-medium { background-color: #B23A48; }
+        .text-maroon-medium { color: #B23A48; }
+        .bg-pink-light { background-color: #FCB9B2; }
+        .text-pink-light { color: #FCB9B2; }
+        .bg-pink-lightest { background-color: #FED0BB; }
+        .text-pink-lightest { color: #FED0BB; }
+        .border-maroon-darkest { border-color: #461220; }
+        .border-maroon-dark { border-color: #8C2F39; }
+
+        /* Chic button style */
+        .chic-button {
+            @apply bg-maroon-dark text-white px-6 py-3 rounded-lg shadow-md hover:bg-maroon-medium transition duration-300 ease-in-out text-lg;
+        }
+
+        /* Input field style */
+        .chic-input {
+            @apply w-full px-4 py-2 border border-maroon-dark rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-light text-maroon-darkest;
+        }
+
+        /* Hide elements by default */
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: block;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 100; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 30px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+            max-width: 500px;
+            border-radius: 10px;
+            color: #461220; /* Dark text for modal */
+            position: relative;
+        }
+        .close-button {
+            color: #aaa;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close-button:hover,
+        .close-button:focus {
+            color: #461220;
+            text-decoration: none;
+        }
+
+         /* Gallery Styles */
+        .gallery {
+            @apply flex items-center justify-center space-x-2 mt-4;
+        }
+        .gallery-container {
+            @apply flex overflow-hidden space-x-2 p-2 bg-white rounded-lg shadow;
+            width: calc(5 * (8rem + 0.5rem)); /* 5 blocks + spacing */
+            max-width: 100%;
+        }
+        .gallery-item {
+            @apply w-32 h-32 border border-pink-light rounded-lg flex-shrink-0 flex items-center justify-center text-center cursor-pointer bg-pink-lightest hover:bg-pink-light transition duration-200;
+            scroll-snap-align: start;
+        }
+         .gallery-item-content {
+            @apply text-sm text-maroon-darkest p-1 break-words;
+         }
+        .scroll-arrow {
+            @apply text-3xl text-maroon-dark hover:text-maroon-medium cursor-pointer px-2;
+        }
+        .profile-box {
+             @apply bg-white p-6 rounded-lg shadow-md mb-8 border border-maroon-dark;
+        }
+        .profile-info p {
+            @apply mb-2 text-lg;
+        }
+        .profile-info strong {
+            @apply text-maroon-dark;
+        }
+        /* Toggle Switch */
+        .switch {
+          position: relative;
+          display: inline-block;
+          width: 60px;
+          height: 34px;
+        }
+        .switch input {
+          opacity: 0;
+          width: 0;
+          height: 0;
+        }
+        .slider {
+          position: absolute;
+          cursor: pointer;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: #ccc;
+          transition: .4s;
+          border-radius: 34px;
+        }
+        .slider:before {
+          position: absolute;
+          content: "";
+          height: 26px;
+          width: 26px;
+          left: 4px;
+          bottom: 4px;
+          background-color: white;
+          transition: .4s;
+          border-radius: 50%;
+        }
+        input:checked + .slider {
+          background-color: #8C2F39; /* maroon-dark */
+        }
+        input:focus + .slider {
+          box-shadow: 0 0 1px #8C2F39;
+        }
+        input:checked + .slider:before {
+          transform: translateX(26px);
+        }
+        .toggle-label {
+            @apply ml-3 text-lg text-maroon-darkest;
+        }
+    </style> -->
+  <link rel="stylesheet" href="styles.css"> 
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-6">
+
+<h1 class="text-4xl font-bold text-maroon-darkest mb-10">Missionary Registry</h1>
+
+    <div id="homePage" class="page active text-center">
+        <h2 class="text-3xl text-maroon-dark mb-8">Welcome</h2>
+        <div class="space-y-4">
+            <button onclick="showPage('createPage')" class="chic-button w-64">Create A Registry</button>
+            <button onclick="showPage('loginPage')" class="chic-button w-64">View/Edit Registry</button>
+            <button onclick="showPage('findPage')" class="chic-button w-64">Find a Registry</button>
+        </div>
+    </div>
+    
+    <div id="createPage" class="page w-full max-w-lg">
+        <h2 class="text-3xl text-maroon-dark mb-6 text-center">Create Your Registry Profile</h2>
+        <form id="createRegistryForm" class="bg-white p-8 rounded-lg shadow-lg space-y-4 border border-maroon-dark">
+            <div>
+                <label for="createFirstName" class="block text-lg font-medium text-maroon-darkest mb-1">First Name</label>
+                <input type="text" id="createFirstName" name="firstName" class="chic-input" required>
+            </div>
+            <div>
+                <label for="createLastName" class="block text-lg font-medium text-maroon-darkest mb-1">Last Name</label>
+                <input type="text" id="createLastName" name="lastName" class="chic-input" required>
+            </div>
+            <div>
+                <label for="createWard" class="block text-lg font-medium text-maroon-darkest mb-1">Ward</label>
+                <input type="text" id="createWard" name="ward" class="chic-input" required>
+            </div>
+            <div>
+                <label for="createMissionArea" class="block text-lg font-medium text-maroon-darkest mb-1">Mission Area Name</label>
+                <input type="text" id="createMissionArea" name="missionArea" class="chic-input" required>
+            </div>
+            <div>
+                <label for="createStartDate" class="block text-lg font-medium text-maroon-darkest mb-1">Start Date</label>
+                <input type="date" id="createStartDate" name="startDate" class="chic-input" required>
+            </div>
+            <div class="flex items-center">
+                <span class="text-lg font-medium text-maroon-darkest mr-4">Gender:</span>
+                <label class="switch">
+                  <input type="checkbox" id="genderToggle">
+                  <span class="slider"></span>
+                </label>
+                <span id="genderLabel" class="toggle-label">Female</span>
+            </div>
+            <div>
+                <label for="createPassword" class="block text-lg font-medium text-maroon-darkest mb-1">Password</label>
+                <input type="password" id="createPassword" name="password" class="chic-input" required>
+                <p class="text-sm text-gray-500 mt-1">Create a password to edit your registry later.</p>
+            </div>
+             <div class="text-red-600 text-sm mb-4" id="createError"></div>
+            <div class="flex justify-between items-center mt-6">
+                <button type="button" onclick="showPage('homePage')" class="text-maroon-dark hover:underline">Cancel</button>
+                <button type="submit" class="chic-button">Save Profile & Start Registry</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="loginPage" class="page w-full max-w-md">
+        <h2 class="text-3xl text-maroon-dark mb-6 text-center">Login to Edit Registry</h2>
+        <form id="loginForm" class="bg-white p-8 rounded-lg shadow-lg space-y-4 border border-maroon-dark">
+            <div>
+                <label for="loginFirstName" class="block text-lg font-medium text-maroon-darkest mb-1">First Name</label>
+                <input type="text" id="loginFirstName" name="firstName" class="chic-input" required>
+            </div>
+            <div>
+                <label for="loginLastName" class="block text-lg font-medium text-maroon-darkest mb-1">Last Name</label>
+                <input type="text" id="loginLastName" name="lastName" class="chic-input" required>
+            </div>
+            <div>
+                <label for="loginPassword" class="block text-lg font-medium text-maroon-darkest mb-1">Password</label>
+                <input type="password" id="loginPassword" name="password" class="chic-input" required>
+            </div>
+            <div class="text-red-600 text-sm mb-4" id="loginError"></div>
+            <div class="flex justify-between items-center mt-6">
+                 <button type="button" onclick="showPage('homePage')" class="text-maroon-dark hover:underline">Cancel</button>
+                 <button type="submit" class="chic-button">Login</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="viewEditPage" class="page w-full max-w-4xl">
+       <br><br><br><br><br><br>
+        <h2 class="text-3xl text-maroon-dark mb-6 text-center">Your Registry</h2>
+
+        <div id="profileDisplay" class="profile-box profile-info">
+            </div>
+
+        <h3 class="text-2xl text-maroon-darkest mb-4">Needs</h3>
+        <div class="gallery">
+            <button class="scroll-arrow" onclick="scrollGallery('needsGallery', -1)">&#10094;</button>
+            <div id="needsGalleryContainer" class="gallery-container">
+                </div>
+            <button class="scroll-arrow" onclick="scrollGallery('needsGallery', 1)">&#10095;</button>
+        </div>
+
+        <h3 class="text-2xl text-maroon-darkest mt-8 mb-4">Wants</h3>
+        <div class="gallery">
+             <button class="scroll-arrow" onclick="scrollGallery('wantsGallery', -1)">&#10094;</button>
+            <div id="wantsGalleryContainer" class="gallery-container">
+                </div>
+             <button class="scroll-arrow" onclick="scrollGallery('wantsGallery', 1)">&#10095;</button>
+        </div>
+
+        <div class="text-center mt-10 space-x-4">
+             <button onclick="saveRegistryChanges()" class="chic-button">Save Changes</button>
+             <button onclick="showPage('homePage'); clearCurrentUser();" class="text-maroon-dark hover:underline">Back to Home</button>
+        </div>
+    </div>
+
+    <div id="findPage" class="page w-full max-w-lg">
+        <h2 class="text-3xl text-maroon-dark mb-6 text-center">Find a Missionary Registry</h2>
+        <form id="findRegistryForm" class="bg-white p-8 rounded-lg shadow-lg space-y-4 border border-maroon-dark">
+            <div>
+                <label for="findFirstName" class="block text-lg font-medium text-maroon-darkest mb-1">First Name</label>
+                <input type="text" id="findFirstName" name="firstName" class="chic-input">
+            </div>
+            <div>
+                <label for="findLastName" class="block text-lg font-medium text-maroon-darkest mb-1">Last Name</label>
+                <input type="text" id="findLastName" name="lastName" class="chic-input">
+                 <p class="text-sm text-gray-500 mt-1">Enter at least one name to search.</p>
+            </div>
+             <div class="text-red-600 text-sm mb-4" id="findError"></div>
+            <div class="flex justify-between items-center mt-6">
+                 <button type="button" onclick="showPage('homePage')" class="text-maroon-dark hover:underline">Cancel</button>
+                 <button type="submit" class="chic-button">Search</button>
+            </div>
+        </form>
+        <div id="searchResults" class="mt-6 bg-white p-4 rounded-lg shadow-lg border border-maroon-dark">
+            <p class="text-center text-gray-500">No results yet. Enter search criteria above.</p>
+        </div>
+    </div>
+
+     <div id="viewerPage" class="page w-full max-w-4xl">
+       <br><br><br><br><br><br>  
+        <h2 class="text-3xl text-maroon-dark mb-6 text-center"><span id="viewerName">Missionary</span>'s Registry</h2>
+
+        <div id="viewerProfileDisplay" class="profile-box profile-info">
+            </div>
+<br>
+        <h3 class="text-2xl text-maroon-darkest mb-4">Needs</h3>
+        <div class="gallery">
+            <button class="scroll-arrow" onclick="scrollGallery('viewerNeedsGallery', -1)">&#10094;</button>
+            <div id="viewerNeedsGalleryContainer" class="gallery-container">
+                </div>
+            <button class="scroll-arrow" onclick="scrollGallery('viewerNeedsGallery', 1)">&#10095;</button>
+        </div>
+
+        <h3 class="text-2xl text-maroon-darkest mt-8 mb-4">Wants</h3>
+        <div class="gallery">
+             <button class="scroll-arrow" onclick="scrollGallery('viewerWantsGallery', -1)">&#10094;</button>
+            <div id="viewerWantsGalleryContainer" class="gallery-container">
+                </div>
+             <button class="scroll-arrow" onclick="scrollGallery('viewerWantsGallery', 1)">&#10095;</button>
+        </div>
+
+        <div class="text-center mt-10">
+             <button onclick="showPage('findPage'); clearViewingRegistry();" class="text-maroon-dark hover:underline">Back to Search</button>
+        </div>
+    </div>
+
+
+    <div id="itemModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button" onclick="closeModal('itemModal')">&times;</span>
+        <h3 id="modalTitle" class="text-2xl text-maroon-dark mb-4">Add Item</h3>
+        <form id="itemForm" class="space-y-3">
+            <input type="hidden" id="modalItemType"> <input type="hidden" id="modalItemIndex"> <div>
+                <label for="itemTitle" class="block text-sm font-medium text-maroon-darkest">Product Title</label>
+                <input type="text" id="itemTitle" class="chic-input text-sm" required>
+            </div>
+            <div>
+                <label for="itemPrice" class="block text-sm font-medium text-maroon-darkest">Price ($)</label>
+                <input type="number" step="0.01" id="itemPrice" class="chic-input text-sm" required>
+            </div>
+            <div>
+                <label for="itemLink" class="block text-sm font-medium text-maroon-darkest">Product Link (URL)</label>
+                <input type="url" id="itemLink" class="chic-input text-sm" placeholder="https://example.com" required>
+            </div>
+            <div class="text-red-600 text-sm mb-4" id="itemError"></div>
+            <div class="flex justify-end space-x-3 mt-4">
+                <button type="button" onclick="closeModal('itemModal')" class="bg-gray-300 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-400 transition">Cancel</button>
+                <button type="submit" class="chic-button px-4 py-2 text-base">Save Item</button>
+            </div>
+        </form>
+      </div>
+    </div>
+
+     <div id="purchaseModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button" onclick="closeModal('purchaseModal')">&times;</span>
+        <h3 class="text-2xl text-maroon-dark mb-4">Mark as Purchased</h3>
+        <p class="mb-4 text-maroon-darkest">You are marking '<span id="purchaseItemName">Item Name</span>' as purchased. You can optionally leave a note for the missionary.</p>
+        <input type="hidden" id="purchaseItemType"> <input type="hidden" id="purchaseItemIndex">
+        <div>
+            <label for="purchaseNote" class="block text-sm font-medium text-maroon-darkest">Optional Note:</label>
+            <textarea id="purchaseNote" rows="3" class="chic-input text-sm" placeholder="e.g., Good Luck! Love, Grandma"></textarea>
+        </div>
+        <div class="text-red-600 text-sm mb-4" id="purchaseError"></div>
+        <div class="flex justify-end space-x-3 mt-4">
+            <button type="button" onclick="closeModal('purchaseModal'); uncheckPurchaseCheckbox();" class="bg-gray-300 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-400 transition">Cancel</button>
+            <button type="button" onclick="confirmPurchase()" class="chic-button px-4 py-2 text-base">Confirm Purchase</button>
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+        // --- Configuration ---
+        const TOTAL_GALLERY_ITEMS = 50;
+        const VISIBLE_GALLERY_ITEMS = 5;
+
+        // --- State Management ---
+        let registries = JSON.parse(localStorage.getItem('missionaryRegistries')) || [];
+        let currentRegistry = null; // The registry being edited
+        let viewingRegistry = null; // The registry being viewed by others
+        let currentGalleryScroll = { // Track scroll position for each gallery
+            needsGallery: 0,
+            wantsGallery: 0,
+            viewerNeedsGallery: 0,
+            viewerWantsGallery: 0
+        };
+        let itemBeingPurchased = null; // Track item for purchase modal {type, index, checkboxElement}
+
+        // --- Utility Functions ---
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+            // Clear errors when changing pages
+            document.querySelectorAll('[id$="Error"]').forEach(el => el.textContent = '');
+             // Reset scroll positions when navigating away from gallery pages
+            if (pageId !== 'viewEditPage') {
+                currentGalleryScroll.needsGallery = 0;
+                currentGalleryScroll.wantsGallery = 0;
+            }
+             if (pageId !== 'viewerPage') {
+                currentGalleryScroll.viewerNeedsGallery = 0;
+                currentGalleryScroll.viewerWantsGallery = 0;
+            }
+        }
+
+        function saveRegistries() {
+            localStorage.setItem('missionaryRegistries', JSON.stringify(registries));
+        }
+
+        function clearCurrentUser() {
+            currentRegistry = null;
+        }
+         function clearViewingRegistry() {
+            viewingRegistry = null;
+        }
+
+        function displayError(elementId, message) {
+            document.getElementById(elementId).textContent = message;
+        }
+
+        function openModal(modalId) {
+             document.getElementById(modalId).style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            // Clear modal form fields and errors
+            if (modalId === 'itemModal') {
+                document.getElementById('itemForm').reset();
+                document.getElementById('itemError').textContent = '';
+                document.getElementById('modalItemType').value = '';
+                document.getElementById('modalItemIndex').value = '';
+            } else if (modalId === 'purchaseModal') {
+                 document.getElementById('purchaseNote').value = '';
+                 document.getElementById('purchaseError').textContent = '';
+                 document.getElementById('purchaseItemType').value = '';
+                 document.getElementById('purchaseItemIndex').value = '';
+                 itemBeingPurchased = null; // Clear reference
+            }
+        }
+
+        // --- Page Navigation and Setup ---
+        document.addEventListener('DOMContentLoaded', () => {
+            showPage('homePage'); // Start on the home page
+
+            // --- Event Listeners ---
+            document.getElementById('createRegistryForm').addEventListener('submit', handleCreateRegistry);
+            document.getElementById('loginForm').addEventListener('submit', handleLogin);
+            document.getElementById('findRegistryForm').addEventListener('submit', handleFindRegistry);
+            document.getElementById('itemForm').addEventListener('submit', handleSaveItem);
+            document.getElementById('genderToggle').addEventListener('change', updateGenderLabel);
+
+             // Initial gender label setup
+            updateGenderLabel();
+        });
+
+        // --- Create Registry ---
+         function updateGenderLabel() {
+            const toggle = document.getElementById('genderToggle');
+            const label = document.getElementById('genderLabel');
+            label.textContent = toggle.checked ? 'Male' : 'Female';
+        }
+
+        function handleCreateRegistry(event) {
+            event.preventDefault();
+            displayError('createError', ''); // Clear previous errors
+            const form = event.target;
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            // Basic validation
+            if (!data.firstName || !data.lastName || !data.password || !data.ward || !data.missionArea || !data.startDate) {
+                displayError('createError', 'Please fill in all required fields.');
+                return;
+            }
+
+             // Check if registry already exists (simple check by name)
+            const exists = registries.some(r => r.profile.firstName.toLowerCase() === data.firstName.toLowerCase() && r.profile.lastName.toLowerCase() === data.lastName.toLowerCase());
+            if (exists) {
+                displayError('createError', 'A registry with this name already exists.');
+                return;
+            }
+
+            // Create new registry object
+            const newRegistry = {
+                id: Date.now().toString(), // Simple unique ID
+                profile: {
+                    firstName: data.firstName,
+                    lastName: data.lastName,
+                    ward: data.ward,
+                    missionArea: data.missionArea,
+                    startDate: data.startDate,
+                    gender: document.getElementById('genderToggle').checked ? 'Male' : 'Female',
+                    password: data.password // **WARNING: Storing passwords directly is insecure!**
+                },
+                needs: Array(TOTAL_GALLERY_ITEMS).fill(null).map(() => ({ title: null, price: null, link: null, purchased: false, note: '' })),
+                wants: Array(TOTAL_GALLERY_ITEMS).fill(null).map(() => ({ title: null, price: null, link: null, purchased: false, note: '' }))
+            };
+
+            registries.push(newRegistry);
+            saveRegistries();
+            currentRegistry = newRegistry; // Set the current user
+            loadViewEditPage(); // Load the edit page directly
+            showPage('viewEditPage');
+            form.reset(); // Clear the form
+            updateGenderLabel(); // Reset toggle label
+        }
+
+        // --- Login ---
+        function handleLogin(event) {
+            event.preventDefault();
+            displayError('loginError', ''); // Clear previous errors
+            const form = event.target;
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            const foundRegistry = registries.find(r =>
+                r.profile.firstName.toLowerCase() === data.firstName.toLowerCase() &&
+                r.profile.lastName.toLowerCase() === data.lastName.toLowerCase() &&
+                r.profile.password === data.password // **Insecure password check**
+            );
+
+            if (foundRegistry) {
+                currentRegistry = foundRegistry;
+                loadViewEditPage();
+                showPage('viewEditPage');
+                form.reset();
+            } else {
+                displayError('loginError', 'Invalid login details or registry not found.');
+            }
+        }
+
+        // --- View/Edit Page ---
+        function loadViewEditPage() {
+            if (!currentRegistry) return; // Should not happen if logic is correct
+
+            // Load Profile Info
+            const profile = currentRegistry.profile;
+            const profileDisplay = document.getElementById('profileDisplay');
+            profileDisplay.innerHTML = `
+                <p><strong>Name:</strong> ${profile.firstName} ${profile.lastName}</p>
+                <p><strong>Ward:</strong> ${profile.ward}</p>
+                <p><strong>Mission Area:</strong> ${profile.missionArea}</p>
+                <p><strong>Start Date:</strong> ${profile.startDate}</p>
+                <p><strong>Gender:</strong> ${profile.gender}</p>
+            `;
+
+            // Load Galleries
+            renderGallery('needs', currentRegistry.needs, 'needsGalleryContainer', true);
+            renderGallery('wants', currentRegistry.wants, 'wantsGalleryContainer', true);
+        }
+
+        function renderGallery(type, items, containerId, isEditable) {
+            const container = document.getElementById(containerId);
+            if (!container) {
+                console.error("Gallery container not found:", containerId);
+                return;
+            }
+            container.innerHTML = ''; // Clear previous items
+            const galleryKey = isEditable ? `${type}Gallery` : `viewer${type.charAt(0).toUpperCase() + type.slice(1)}Gallery`;
+            const scrollIndex = currentGalleryScroll[galleryKey] || 0;
+            const startIndex = scrollIndex;
+            const endIndex = startIndex + VISIBLE_GALLERY_ITEMS;
+
+
+            items.forEach((item, index) => {
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('gallery-item');
+                itemDiv.dataset.index = index;
+                itemDiv.dataset.type = type;
+
+                if (item && item.title) {
+                    // Item exists
+                    const contentDiv = document.createElement('div');
+                    contentDiv.classList.add('gallery-item-content');
+                    contentDiv.innerHTML = `
+                        <span class="font-semibold block">${item.title}</span>
+                        ${item.price ? `<span class="block">$${parseFloat(item.price).toFixed(2)}</span>` : ''}
+                        ${item.purchased ? '<span class="block text-green-600 font-bold">(Purchased)</span>' : ''}
+                    `;
+                     // Add checkbox for viewer page if not purchased
+                    if (!isEditable && !item.purchased) {
+                        const checkboxContainer = document.createElement('div');
+                        checkboxContainer.classList.add('mt-1');
+                        const checkbox = document.createElement('input');
+                        checkbox.type = 'checkbox';
+                        checkbox.id = `cb-${type}-${index}`;
+                        checkbox.dataset.index = index;
+                        checkbox.dataset.type = type;
+                        checkbox.classList.add('mr-1');
+                        checkbox.addEventListener('change', handlePurchaseCheck);
+                        const label = document.createElement('label');
+                        label.htmlFor = `cb-${type}-${index}`;
+                        label.textContent = 'Purchased?';
+                        label.classList.add('text-xs', 'cursor-pointer');
+                        checkboxContainer.appendChild(checkbox);
+                        checkboxContainer.appendChild(label);
+                        contentDiv.appendChild(checkboxContainer);
+                    } else if (!isEditable && item.purchased) {
+                         const purchasedText = document.createElement('span');
+                         purchasedText.classList.add('block', 'text-green-600', 'font-bold', 'mt-1', 'text-xs');
+                         purchasedText.textContent = 'Already Purchased';
+                         if (item.note) {
+                            purchasedText.textContent += ` (Note: ${item.note})`;
+                         }
+                         contentDiv.appendChild(purchasedText);
+                    }
+
+                    itemDiv.appendChild(contentDiv);
+                    if (isEditable) {
+                        itemDiv.onclick = () => openItemModal(type, index, item); // Allow editing existing items
+                    } else if (item.link) {
+                         // Make the block clickable if there's a link (Viewer mode)
+                        itemDiv.onclick = (e) => {
+                             // Prevent click if checkbox was clicked
+                            if (e.target.type !== 'checkbox') {
+                                window.open(item.link, '_blank');
+                            }
+                        };
+                        itemDiv.style.cursor = 'pointer'; // Indicate clickability
+                        itemDiv.title = `View Product: ${item.title}`;
+                    }
+
+
+                } else if (isEditable) {
+                    // Empty slot - "Add" button
+                    itemDiv.innerHTML = `<span class="text-lg font-semibold">Add +</span>`;
+                    itemDiv.onclick = () => openItemModal(type, index);
+                } else {
+                     // Empty slot - Viewer mode (display empty)
+                    itemDiv.innerHTML = `<span class="text-gray-400 text-sm">(Empty)</span>`;
+                    itemDiv.classList.remove('hover:bg-pink-light', 'cursor-pointer'); // Not interactive
+                    itemDiv.classList.add('bg-gray-100');
+                }
+
+                 // Only display items within the visible range
+                if (index >= startIndex && index < endIndex) {
+                     itemDiv.style.display = 'flex'; // Make sure it's visible
+                 } else {
+                     itemDiv.style.display = 'none'; // Hide items outside the range
+                 }
+
+                container.appendChild(itemDiv);
+            });
+        }
+
+
+        function scrollGallery(galleryKey, direction) {
+            const totalItems = galleryKey.includes('viewer') ? viewingRegistry[galleryKey.replace('viewer','').replace('Gallery','').toLowerCase()].length : currentRegistry[galleryKey.replace('Gallery','')].length;
+            const maxScroll = Math.max(0, totalItems - VISIBLE_GALLERY_ITEMS);
+
+            currentGalleryScroll[galleryKey] += direction;
+
+            // Clamp scroll position
+            if (currentGalleryScroll[galleryKey] < 0) {
+                currentGalleryScroll[galleryKey] = 0;
+            } else if (currentGalleryScroll[galleryKey] > maxScroll) {
+                currentGalleryScroll[galleryKey] = maxScroll;
+            }
+
+            // Re-render the specific gallery that was scrolled
+            const isEditable = !galleryKey.includes('viewer');
+            const type = galleryKey.replace('viewer','').replace('Gallery','').toLowerCase();
+             const items = isEditable ? currentRegistry[type] : viewingRegistry[type];
+            const containerId = `${galleryKey}Container`;
+
+            renderGallery(type, items, containerId, isEditable);
+        }
+
+
+        function openItemModal(type, index, existingItem = null) {
+            document.getElementById('modalItemType').value = type;
+            document.getElementById('modalItemIndex').value = index;
+            const modalTitle = document.getElementById('modalTitle');
+
+            if (existingItem && existingItem.title) {
+                 modalTitle.textContent = "Edit Item";
+                 document.getElementById('itemTitle').value = existingItem.title;
+                 document.getElementById('itemPrice').value = existingItem.price || '';
+                 document.getElementById('itemLink').value = existingItem.link || '';
+            } else {
+                modalTitle.textContent = "Add Item";
+                 // Form is reset in closeModal, but ensure fields are clear
+                 document.getElementById('itemForm').reset();
+            }
+
+            openModal('itemModal');
+        }
+
+        function handleSaveItem(event) {
+            event.preventDefault();
+            displayError('itemError', '');
+            const type = document.getElementById('modalItemType').value;
+            const index = parseInt(document.getElementById('modalItemIndex').value);
+            const title = document.getElementById('itemTitle').value.trim();
+            const price = document.getElementById('itemPrice').value;
+            const link = document.getElementById('itemLink').value.trim();
+
+            if (!title || !price || !link) {
+                displayError('itemError', 'Please fill in all fields.');
+                return;
+            }
+
+            // Basic URL validation
+            try {
+                new URL(link);
+            } catch (_) {
+                displayError('itemError', 'Please enter a valid URL (e.g., https://example.com).');
+                return;
+            }
+
+
+            if (currentRegistry && type && !isNaN(index)) {
+                currentRegistry[type][index] = {
+                    title: title,
+                    price: parseFloat(price).toFixed(2),
+                    link: link,
+                    purchased: currentRegistry[type][index]?.purchased || false, // Preserve purchased status
+                    note: currentRegistry[type][index]?.note || '' // Preserve note
+                };
+                // No need to save to localStorage here, wait for explicit "Save Changes" button
+                renderGallery(type, currentRegistry[type], `${type}GalleryContainer`, true); // Re-render the updated gallery
+                closeModal('itemModal');
+            } else {
+                 displayError('itemError', 'Could not save item. Registry context lost.');
+            }
+        }
+
+        function saveRegistryChanges() {
+            // Find the index of the current registry in the main array
+             const index = registries.findIndex(r => r.id === currentRegistry.id);
+             if (index !== -1) {
+                 registries[index] = currentRegistry; // Update the registry in the main array
+                 saveRegistries(); // Save the entire updated array to localStorage
+                 alert('Registry changes saved successfully!'); // Simple confirmation
+             } else {
+                 alert('Error: Could not find registry to save changes.');
+             }
+        }
+
+
+        // --- Find Registry ---
+        function handleFindRegistry(event) {
+            event.preventDefault();
+            displayError('findError', '');
+            const firstName = document.getElementById('findFirstName').value.trim().toLowerCase();
+            const lastName = document.getElementById('findLastName').value.trim().toLowerCase();
+            const resultsContainer = document.getElementById('searchResults');
+            resultsContainer.innerHTML = ''; // Clear previous results
+
+            if (!firstName && !lastName) {
+                displayError('findError', 'Please enter at least a first or last name.');
+                 resultsContainer.innerHTML = '<p class="text-center text-gray-500">Enter search criteria above.</p>';
+                return;
+            }
+
+            const results = registries.filter(r => {
+                const profile = r.profile;
+                const matchFirst = firstName ? profile.firstName.toLowerCase().includes(firstName) : true;
+                const matchLast = lastName ? profile.lastName.toLowerCase().includes(lastName) : true;
+                return matchFirst && matchLast;
+            });
+
+            if (results.length > 0) {
+                const list = document.createElement('ul');
+                list.classList.add('space-y-3');
+                results.forEach(r => {
+                    const item = document.createElement('li');
+                    item.classList.add('p-3', 'border', 'border-pink-light', 'rounded-lg', 'hover:bg-pink-lightest', 'cursor-pointer', 'transition');
+                    item.innerHTML = `
+                        <span class="font-semibold text-maroon-darkest">${r.profile.firstName} ${r.profile.lastName}</span>
+                        <span class="block text-sm text-gray-600">Mission: ${r.profile.missionArea}</span>
+                    `;
+                    item.onclick = () => viewRegistry(r.id);
+                    list.appendChild(item);
+                });
+                resultsContainer.appendChild(list);
+            } else {
+                resultsContainer.innerHTML = '<p class="text-center text-maroon-darkest">No registries found matching your criteria.</p>';
+            }
+        }
+
+        // --- Viewer Page ---
+         function viewRegistry(registryId) {
+            const foundRegistry = registries.find(r => r.id === registryId);
+            if (foundRegistry) {
+                viewingRegistry = JSON.parse(JSON.stringify(foundRegistry)); // Deep copy to prevent accidental modification
+                loadViewerPage();
+                showPage('viewerPage');
+            } else {
+                 // Handle case where registry might have been deleted between search and click
+                 alert("Error: Could not find the selected registry.");
+                 showPage('findPage'); // Go back to search
+            }
+        }
+
+        function loadViewerPage() {
+             if (!viewingRegistry) return;
+
+            document.getElementById('viewerName').textContent = `${viewingRegistry.profile.firstName} ${viewingRegistry.profile.lastName}`;
+
+            // Load Profile Info (Read-only)
+            const profile = viewingRegistry.profile;
+            const profileDisplay = document.getElementById('viewerProfileDisplay');
+            profileDisplay.innerHTML = `
+                <p><strong>Name:</strong> ${profile.firstName} ${profile.lastName}</p>
+                <p><strong>Ward:</strong> ${profile.ward}</p>
+                <p><strong>Mission Area:</strong> ${profile.missionArea}</p>
+                <p><strong>Start Date:</strong> ${profile.startDate}</p>
+                 <p><strong>Gender:</strong> ${profile.gender}</p>
+            `;
+
+            // Load Galleries (Viewer Mode)
+            renderGallery('needs', viewingRegistry.needs, 'viewerNeedsGalleryContainer', false);
+            renderGallery('wants', viewingRegistry.wants, 'viewerWantsGalleryContainer', false);
+        }
+
+        function handlePurchaseCheck(event) {
+            const checkbox = event.target;
+            const type = checkbox.dataset.type;
+            const index = parseInt(checkbox.dataset.index);
+
+            if (checkbox.checked) {
+                 // Open the note modal
+                 const item = viewingRegistry[type][index];
+                 document.getElementById('purchaseItemName').textContent = item.title;
+                 document.getElementById('purchaseItemType').value = type;
+                 document.getElementById('purchaseItemIndex').value = index;
+                 itemBeingPurchased = { type, index, checkboxElement: checkbox }; // Store context
+                 openModal('purchaseModal');
+            } else {
+                 // Unchecking - potentially needs handling if we allowed un-purchasing,
+                 // but current flow is one-way (mark as purchased).
+                 // For simplicity, we won't implement un-purchasing now.
+                 // If needed, would require clearing the 'purchased' flag and note.
+                 console.log("Unchecking is not currently supported via UI.");
+                 // Re-check it visually as unchecking isn't allowed after confirmation
+                 checkbox.checked = true;
+            }
+        }
+
+         function uncheckPurchaseCheckbox() {
+             // Called when purchase modal is cancelled
+             if (itemBeingPurchased && itemBeingPurchased.checkboxElement) {
+                 itemBeingPurchased.checkboxElement.checked = false;
+             }
+             itemBeingPurchased = null; // Clear context
+         }
+
+        function confirmPurchase() {
+            const type = document.getElementById('purchaseItemType').value;
+            const index = parseInt(document.getElementById('purchaseItemIndex').value);
+            const note = document.getElementById('purchaseNote').value.trim();
+
+            if (type && !isNaN(index)) {
+                // Find the original registry in the main 'registries' array to update it
+                 const originalRegistryIndex = registries.findIndex(r => r.id === viewingRegistry.id);
+                 if (originalRegistryIndex !== -1) {
+                     // Update the actual registry data in localStorage
+                     registries[originalRegistryIndex][type][index].purchased = true;
+                     registries[originalRegistryIndex][type][index].note = note;
+                     saveRegistries(); // Persist the change
+
+                     // Update the currently viewed copy as well
+                     viewingRegistry[type][index].purchased = true;
+                     viewingRegistry[type][index].note = note;
+
+
+                     // Re-render the specific gallery to reflect the change immediately
+                     renderGallery(type, viewingRegistry[type], `viewer${type.charAt(0).toUpperCase() + type.slice(1)}GalleryContainer`, false);
+
+                     closeModal('purchaseModal');
+                 } else {
+                      displayError('purchaseError', 'Error: Could not find original registry to update.');
+                 }
+
+            } else {
+                displayError('purchaseError', 'Error processing purchase confirmation.');
+            }
+        }
+
+    </script>
+
+</body>
+</html>
